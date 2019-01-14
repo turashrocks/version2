@@ -11,15 +11,23 @@ return [
             'users' => 'c,r,u,d',
             'profile' => 'r,u'
         ],
-        'user' => [
+        'editor' => [
+            'profile' => 'r,u'
+        ],
+        'author' => [
+            'profile' => 'r,u'
+        ],
+        'contributer' => [
+            'profile' => 'r,u'
+        ],
+        'supporter' => [
+            'profile' => 'r,u'
+        ],
+        'subscriber' => [
             'profile' => 'r,u'
         ],
     ],
-    'permission_structure' => [
-        'cru_user' => [
-            'profile' => 'c,r,u'
-        ],
-    ],
+    'permission_structure' => [],
     'permissions_map' => [
         'c' => 'create',
         'r' => 'read',

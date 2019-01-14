@@ -3630,6 +3630,19 @@ a.nav-item.is-tab.is-active {
   cursor: not-allowed;
 }
 
+/* START of Customized CSS */
+
+.side-menu {
+  position: fixed;
+  height: 100vh;
+  width: 220px;
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  /* overflow-y: scroll; */
+}
+
+/* END of Customized CSS */
+
 /*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
 
 html,
@@ -3713,7 +3726,7 @@ th {
 }
 
 html {
-  background-color: white;
+  background-color: whitesmoke;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -9609,11 +9622,11 @@ a.list-item {
 
 .menu-list a:hover {
   background-color: whitesmoke;
-  color: #363636;
+  color:rgb(0, 209, 178);
 }
 
 .menu-list a.is-active {
-  background-color: #3490dc;
+  background-color: rgb(0, 209, 178);
   color: #fff;
 }
 
