@@ -1,34 +1,29 @@
-<div class="side-menu">
-    <aside class="menu m-t-10">
+<!--<div class="side-menu">-->
+<div class="column is-narrow">
+  <div class="box" style="width: 200px; border: none; box-shadow: none; border-radius: 0px;">
+    <aside class="menu">
         <p class="menu-label">
-          &nbsp;General
+          General
         </p>
         <ul class="menu-list">
           <li><a href="{{route('manage.dashboard')}}">Dashboard</a></li>
-          <li><a href="#">Customers</a></li>
         </ul>
         <p class="menu-label">
-            &nbsp;Administration
+          Administration
         </p>
         <ul class="menu-list">
-          <li><a>Team Settings</a></li>
+          <li><a href="{{route('users.index')}}">Manage Users</a></li>
           <li>
-            <a class="is-active">Manage Your Team</a>
+            <a class="is-active">Roles and Permission</a>
             <ul>
-              <li><a>Members</a></li>
-              <li><a>Plugins</a></li>
+              <li><a>sample</a></li>
+              <li><a>sample</a></li>
             </ul>
           </li>
-          <li><a>Invitations</a></li>
-        </ul>
-        <p class="menu-label">
-            &nbsp;Transactions
-        </p>
-        <ul class="menu-list">
-          <li><a>Payments</a></li>
-          <li><a>Transfers</a></li>
-          <li><a>Balance</a></li>
+          <li><a>sample</a></li>
         </ul>
       </aside>
+  </div>
 </div>
+<!--</div>-->
       

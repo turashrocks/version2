@@ -23,15 +23,11 @@
 </head>
 <body>
     <div id="app">
-
         @include('_includes.nav.main')
-
-        @include('_includes.nav.manage')
-
-        <main class="py-4">
+        <div class="columns is-gapless">
+            @include('_includes.nav.manage')
             @yield('content')
-        </main>
-
+        </div>
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
