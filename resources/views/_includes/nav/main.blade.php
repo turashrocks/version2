@@ -1,4 +1,5 @@
-<nav class="nav has-shadow">
+<div class="columns">
+    <div class="column">
         <div class="nav-left">
             <a class="nav-item" href="{{route('home')}}">
                 <img src="{{ asset('img/logo.png')}}" alt="ä">
@@ -7,7 +8,9 @@
             <a href="" class="nav-item is-tab is-hidden-mobile m-l-10">Discuss</a>
             <a href="" class="nav-item is-tab is-hidden-mobile m-l-10">Share</a>-->
         </div>
-        <div class="nav-right" style="overflow:visible;">
+    </div>
+    <div class="column">
+        <div class="nav-right is-pulled-right" style="overflow:visible;">
            @if (Auth::guest())
             <a href="{{route('login')}}" class="nav-item is-tab is-hidden-mobile m-l-10">Login</a>
             <a href="{{route('register')}}" class="nav-item is-tab is-hidden-mobile m-l-10">Join the community</a>
@@ -37,4 +40,6 @@
             </b-dropdown>
            @endif
         </div>
-</nav>
+    </div>
+</div>
+

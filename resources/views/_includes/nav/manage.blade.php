@@ -12,9 +12,11 @@
           Administration
         </p>
         <ul class="menu-list">
-          <li><a href="{{route('users.index')}}">Manage Users</a></li>
           <li>
-            <a class="is-active">Roles and Permission</a>
+            <a href="{{route('users.index')}}">Manage Users</a>
+          </li>
+          <li>
+            <a  href="{{route('permissions.index')}}" class="is-active">Roles and Permission</a>
             <ul>
               <li><a>sample</a></li>
               <li><a>sample</a></li>
