@@ -9,7 +9,7 @@
             <a href="" class="nav-item is-tab is-hidden-mobile m-l-10">Share</a>-->
         </div>
     </div>
-    <div class="column">
+    <div class="column" id="navDropdown">
         <div class="nav-right is-pulled-right" style="overflow:visible;">
            @if (Auth::guest())
             <a href="{{route('login')}}" class="nav-item is-tab is-hidden-mobile m-l-10">Login</a>
@@ -41,5 +41,15 @@
            @endif
         </div>
     </div>
+    @section('scripts')
+    <script>
+    var appNavDropdown = new Vue({
+        name: 'AppNavDropdown',
+        el: '#navDropdown',
+        data: {}
+    });
+    </script>
+    @endsection
 </div>
+
 
