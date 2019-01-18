@@ -16,10 +16,10 @@
             <a href="{{route('users.index')}}">Manage Users</a>
           </li>
           <li>
-            <a  href="{{route('permissions.index')}}" class="is-active">Roles and Permission</a>
+            <a  href="{{route('permissions.index')}}" class="is-active">Roles and Permissions</a>
             <ul>
-              <li><a>sample</a></li>
-              <li><a>sample</a></li>
+              <li><a href="{{route('roles.index')}}">Roles</a></li>
+              <li><a href="{{route('permissions.index')}}">Permissions</a></li>
             </ul>
           </li>
           <li><a>sample</a></li>

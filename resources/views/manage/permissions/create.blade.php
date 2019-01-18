@@ -122,6 +122,6 @@ var appNavDropdown = new Vue({
         name: 'AppNavDropdown',
         el: '#navDropdown',
         data: {}
-    });
+});
 </script>
 @endsection
