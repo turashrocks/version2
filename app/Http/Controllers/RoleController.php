@@ -98,6 +98,7 @@ class RoleController extends Controller
     public function update(Request $request, $id)
     {
       $this->validate($request, [
+        //'value' => 'in:true,false',
         'display_name' => 'required|max:255',
         'description' => 'sometimes|max:255'
       ]);
@@ -107,6 +108,7 @@ class RoleController extends Controller
       $role->description = $request->description;
       $role->save();
 
+      
       if ($request->permissions) {
         $role->syncPermissions(explode(',', $request->permissions));
       }

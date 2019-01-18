@@ -37,7 +37,7 @@
                       <input type="text" class="input" value="{{$role->description}}" id="description" name="description">
                     </p>
                   </div>
-                  <input type="hidden"mname="permissions">
+                  <input type="hidden" name="permissions" :value="permissionsSelected">
                 </div>
               </div>
             </article>
@@ -52,20 +52,19 @@
               <div class="media-content">
                 <div class="content">
                   <h2 class="title">Permissions:</h1>
-                  <div class="field">
                   
                       @foreach($permissions as $permission)
-                            @if($role->hasPermission($permission->name))
-                            <div class="field"  style="background-coloe: red;">
-                                <b-checkbox :value="true">{{$permission->display_name}} <em>({{$permission->description}})</em></b-checkbox>
-                            </div>
-                            @else
-                            <div class="field">
-                                <b-checkbox :value="false">{{$permission->display_name}} <em>({{$permission->description}})</em></b-checkbox>
-                            </div>
-                            @endif
-                      @endforeach
-                  </ul>
+                      @if($role->hasPermission($permission->name))
+                         <div class="field">
+                             <b-checkbox :value="true">{{$permission->display_name}} <em>({{$permission->description}})</em></b-checkbox>
+                           </div>
+                       @else
+                       <div class="field">
+                              <b-checkbox :value="false">{{$permission->display_name}} <em>({{$permission->description}})</em></b-checkbox>
+                        </div>
+                        @endif
+                   @endforeach
+                 
                 </div>
               </div>
             </article>
@@ -93,7 +92,7 @@
     name: 'EditRoles',
     el: '#editRoles',
     data: {
-     //permissionsSelected: {!!$role->permissions->pluck('display_name')!!}
+     permissionsSelected: {!!$role->permissions->pluck('id')!!}
     }
   });
 

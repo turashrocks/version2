@@ -1,7 +1,7 @@
 @extends('layouts.manage')
 @section('content')
 
-<div class="column" id="createPermission">
+<div class="column">
     <div class="box"  style="border: none; border-radius: 0px;">
       <div class="container">
         <div class="columns">
@@ -98,11 +98,10 @@
 
 @section('scripts')
 <script>
-var appCreatePermission = new Vue({
-      name: 'AppCreatePermission',
-      el: '#createPermission',
+var app = new Vue({
+      el: '#app',
       data: {
-        permissionType: 'basic',
+        permissionType: 'crud',
         resource: '',
         crudSelected: ['create', 'read', 'update', 'delete']
       },
@@ -118,10 +117,5 @@ var appCreatePermission = new Vue({
         }
       }
 });
-var appNavDropdown = new Vue({
-        name: 'AppNavDropdown',
-        el: '#navDropdown',
-        data: {}
-});
 </script>
-@endsection
+@endsection 
