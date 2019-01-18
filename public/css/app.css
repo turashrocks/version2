@@ -17666,3 +17666,15 @@ button.nav-item.is-active {
   color: #fff;
 }
 
+[v-cloak] > * {
+  display: none;
+}
+
+[v-cloak]::before {
+  content: "loading...";
+}
+
+.navbar-item img {
+  max-height: 2.95rem;
+}
+

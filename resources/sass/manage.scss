@@ -2,3 +2,9 @@
     background-color: rgb(0, 209, 178);
     color: #fff;
   }
+[v-cloak] > * { display:none; }
+[v-cloak]::before { content: "loading..."; }
+
+.navbar-item img {
+  max-height: 2.95rem;
+}

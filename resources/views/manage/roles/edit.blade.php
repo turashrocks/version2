@@ -82,11 +82,6 @@
 
 @section('scripts')
   <script>
-   var appNavDropdown = new Vue({
-          name: 'AppNavDropdown',
-          el: '#navDropdown',
-          data: {}
-  });
 
   var editRoles = new Vue({
     name: 'EditRoles',

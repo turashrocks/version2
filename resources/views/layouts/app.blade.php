@@ -15,7 +15,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <!--<link rel="dns-prefetch" href="http://fonts.gstatic.com">-->
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
@@ -28,7 +28,7 @@
             @yield('content')
     </div>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
     @yield('scripts')
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
