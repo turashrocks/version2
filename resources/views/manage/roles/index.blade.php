@@ -9,7 +9,7 @@
         <h1 class="title">Manage Roles</h1>
       </div>
       <div class="column">
-        <a href="{{route('roles.create')}}" class="button is-primary is-pulled-right"><i class="fa fa-user-plus m-r-10"></i> Create New Role</a>
+        <a href="{{route('roles.create')}}" class="button is-primary is-pulled-right"><i class="fa fa-user-plus m-r-10"></i> Create New Role (issue)</a>
       </div>
     </div>
 

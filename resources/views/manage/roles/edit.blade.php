@@ -22,13 +22,13 @@
                   <div class="field">
                     <p class="control">
                       <label for="display_name" class="label">Name (Human Readable)</label>
-                      <input type="text" class="input" name="display_name" value="{{$role->display_name}}" id="display_name">
+                      <input type="text" class="input" name="display_name" value="{{$role->display_name}}">
                     </p>
                   </div>
                   <div class="field">
                     <p class="control">
                       <label for="name" class="label">Slug (Can not be edited)</label>
-                      <input type="text" class="input" name="name" value="{{$role->name}}" disabled id="name">
+                      <input type="text" class="input" name="name" value="{{$role->name}}" disabled>
                     </p>
                   </div>
                   <div class="field">
@@ -37,7 +37,7 @@
                       <input type="text" class="input" value="{{$role->description}}" id="description" name="description">
                     </p>
                   </div>
-                  <input type="hidden" name="permissions" :value="permissionsSelected">
+                  <input type="hidden" name="permissions" :value="pSelect">
                 </div>
               </div>
             </article>
@@ -52,23 +52,30 @@
               <div class="media-content">
                 <div class="content">
                   <h2 class="title">Permissions:</h1>
-                  
-                      @foreach($permissions as $permission)
-                      @if($role->hasPermission($permission->name))
-                         <div class="field">
-                             <b-checkbox :value="true">{{$permission->display_name}} <em>({{$permission->description}})</em></b-checkbox>
-                           </div>
-                       @else
-                       <div class="field">
-                              <b-checkbox :value="false">{{$permission->display_name}} <em>({{$permission->description}})</em></b-checkbox>
-                        </div>
-                        @endif
-                   @endforeach
-                 
+                     {{-- @foreach($permissions as $permission) --}}
+                       {{-- @if($role->hasPermission($permission->name)) --}}
+                         <!--<div class="field">
+                             <b-checkbox :value="true">{{--{{$permission->id}} {{$permission->display_name}} <em>({{$permission->description}})--}}</em></b-checkbox>
+                           </div>-->
+                       {{-- @else --}}
+                       <!--<div class="field">
+                              <b-checkbox :value="false">{{--{{$permission->id}} {{$permission->display_name}} <em>({{$permission->description}})--}}</em></b-checkbox>
+                        </div>-->
+                        {{-- @endif --}}
+                    {{-- @endforeach --}}
+                    @foreach($permissions as $permission)
+                    <div class="form-check pt-1">
+                      <h5 class="form-check-label" >
+                        <input class="form-check-input" type="checkbox" name="permissions[]" value="{{$permission->id}}"
+                        @if ($role->permissions->contains($permission->id)) checked='checked' @endif>
+                        {{$permission->display_name}} <small><em>({{$permission->description}})</em></small>
+                      </h5>
+                    </div>
+                    @endforeach
+                  </div>
                 </div>
-              </div>
-            </article>
-          </div> <!-- end of .box -->
+              </article>
+            </div> <!-- end of .box -->
 
           <button class="button is-primary">Save Changes to Role</button>
         </div>
@@ -84,12 +91,11 @@
   <script>
 
   var editRoles = new Vue({
-    name: 'EditRoles',
     el: '#editRoles',
     data: {
-     permissionsSelected: {!!$role->permissions->pluck('id')!!}
+     pSelect: {!!$role->permissions->pluck('id')!!}
     }
   });
-
+  
   </script>
 @endsection
