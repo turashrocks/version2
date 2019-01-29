@@ -13,7 +13,7 @@
           {{method_field('PUT')}}
           {{csrf_field()}}
 
-            <div class="columns" id="rSelected">
+            <div class="columns">
               <div class="column">
                   <div class="field">
                     <label for="name" class="label">Name:</label>
@@ -34,23 +34,13 @@
                   <label for="roles" class="label">Roles:</label>
                   <input type="hidden" name="roles" :value="rolesSelected" />
         
-                  <!--<b-checkbox-group v-model="rolesSelected">-->
-                    {{-- @foreach ($roles as $role) --}}
-                      <!--<div class="field">
-                        <b-checkbox :custom-value="{{--{{$role->id}}">{{$role->display_name}}--}}</b-checkbox>
-                      </div>-->
-                    {{-- @endforeach --}}
-                  <!--</b-checkbox-group>-->
-                    @foreach($roles as $role)
-                      <div class="form-check pt-1">
-                        <h5 class="form-check-label" >
-                          <input class="form-check-input" type="checkbox" name="roles[]" value="{{$role->id}}"
-                          @if ($user->roles->contains($role->id)) checked='checked' @endif>
-                          {{$role->display_name}}
-                        </h5>
+                  <b-checkbox-group v-model="rolesSelected">
+                    @foreach ($roles as $role)
+                      <div class="field">
+                        <b-checkbox :custom-value="{{$role->id}}">{{$role->display_name}}</b-checkbox>
                       </div>
                     @endforeach
-
+                  </b-checkbox-group>
                 </div>
             </div>
 
@@ -70,18 +60,11 @@
 @section('scripts')
   <script>
 
-    // var app = new Vue({
-    //   el: '#app',
-    //   data: {
-    //     rolesSelected: {!! $user->roles->pluck('id') !!}
-    //   }
-    // });
-
-    var rSelected = new Vue({
-    el: '#rSelected',
-    data: {
-      rolesSelected: {!!$user->roles->pluck('id')!!}
-    }
+    var app = new Vue({
+      el: '#app',
+      data: {
+        rolesSelected: {!! $user->roles->pluck('id') !!}
+      }
     });
 
   </script>

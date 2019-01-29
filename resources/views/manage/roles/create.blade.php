@@ -1,13 +1,14 @@
 @extends('layouts.manage')
 
 @section('content')
-  <div class="flex-container">
-    <div class="columns m-t-10">
-      <div class="column">
+<div class="column">
+  <div class="box"  style="border: none; border-radius: 0px;">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
         <h1 class="title">Create New Role</h1>
       </div>
     </div>
-    <hr class="m-t-0">
     <form action="{{route('roles.store')}}" method="POST">
       {{ csrf_field() }}
       <div class="columns">
@@ -45,24 +46,8 @@
 
       <div class="columns">
         <div class="column">
-          <div class="box">
-            <article class="media">
-              <div class="media-content">
-                <div class="content">
-                  <h2 class="title">Permissions:</h1>
-                  <b-checkbox-group v-model="permissionsSelected">
-                    @foreach ($permissions as $permission)
-                      <div class="field">
-                        <b-checkbox :custom-value="{{$permission->id}}">{{$permission->display_name}} <em>({{$permission->description}})</em></b-checkbox>
-                      </div>
-                    @endforeach
-                  </ul>
-                </div>
-              </div>
-            </article>
-          </div> <!-- end of .box -->
 
-          <button class="button is-primary">Create new User</button>
+          <button class="button is-primary">Create New Role</button>
         </div>
       </div>
     </form>

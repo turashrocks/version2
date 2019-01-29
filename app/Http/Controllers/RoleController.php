@@ -44,7 +44,7 @@ class RoleController extends Controller
     {
       $this->validate($request, [
         'display_name' => 'required|max:255',
-        'name' => 'required|max:100|alpha_dash|unique:permissions,name',
+        'name' => 'required|max:100|alpha_dash|unique:roles,name',
         'description' => 'sometimes|max:255'
       ]);
 

@@ -119,15 +119,16 @@ class UserController extends Controller
         'email' => 'required|email|unique:users,email,'.$id
       ]);
 
-      //$roles = new Role();
       $user = User::findOrFail($id);
       $user->name = $request->name;
       $user->email = $request->email;
-      //$user->password = Hash::make($request->password);  
+      $user->password = Hash::make($request->password);
+      
       $user->save();
 
-      $user->syncRoles($request->roles);
-      return redirect()->route('users.show', $id);
+      $user->syncRoles(explode(',', $request->roles));
+      return redirect()->route('users.edit', $id);
+
     }
 
     /**
