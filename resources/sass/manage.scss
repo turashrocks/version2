@@ -2,9 +2,49 @@
     background-color: rgb(0, 209, 178);
     color: #fff;
   }
+.menu-list a.active {
+    background-color: #00d1b2;
+    color: #fff;
+}
+
 [v-cloak] > * { display:none; }
 [v-cloak]::before { content: "loading..."; }
 
 .navbar-item img {
   max-height: 2.95rem;
+}
+
+.side-menu {
+  position: absolute;
+  top: 4rem;
+  bottom: 0;
+  width: 200px;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.management-area {
+  position: absolute;
+  top: 4rem;
+  left: 200px;
+  right: 0;
+}
+
+.flex-container {
+  margin: 10px 25px;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-list li ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.menu-list li ul {
+  margin-right: 0;
 }

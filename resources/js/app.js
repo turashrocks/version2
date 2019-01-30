@@ -5,7 +5,7 @@ import Buefy from 'buefy';
 
 Vue.use(Buefy);
 
-
+require('./manage')
 
 //NAV DROPDOWN
 var appND = new Vue({

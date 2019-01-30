@@ -53091,7 +53091,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
-Vue.use(buefy__WEBPACK_IMPORTED_MODULE_0___default.a); //NAV DROPDOWN
+Vue.use(buefy__WEBPACK_IMPORTED_MODULE_0___default.a);
+
+__webpack_require__(/*! ./manage */ "./resources/js/manage.js"); //NAV DROPDOWN
+
 
 var appND = new Vue({
   name: 'appND',
@@ -53153,6 +53156,43 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/manage.js":
+/*!********************************!*\
+  !*** ./resources/js/manage.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var accordions = document.getElementsByClassName('has-submenu');
+
+for (var i = 0; i < accordions.length; i++) {
+  if (accordions[i].classList.contains('active')) {
+    var submenu = accordions[i].nextElementSibling;
+    submenu.style.maxHeight = submenu.scrollHeight + "px";
+    submenu.style.marginTop = "0.75em";
+    submenu.style.marginBottom = "0.75em";
+  }
+
+  accordions[i].onclick = function () {
+    this.classList.toggle('is-active');
+    var submenu = this.nextElementSibling;
+
+    if (submenu.style.maxHeight) {
+      // menu is open, we need to close it now
+      submenu.style.maxHeight = null;
+      submenu.style.marginTop = null;
+      submenu.style.marginBottom = null;
+    } else {
+      // meny is close, so we need to open it
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+      submenu.style.marginTop = "0.75em";
+      submenu.style.marginBottom = "0.75em";
+    }
+  };
+}
 
 /***/ }),
 
